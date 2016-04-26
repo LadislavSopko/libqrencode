@@ -154,7 +154,7 @@ endif (HAVE_CONFIGURE_H_IN)
 ##____________________________________________________________________
 ## Build 'libqrencode' library
 
-add_library (qrencode SHARED
+add_library (qrcodelib SHARED
   qrencode.c
   qrencode_inner.h
   qrinput.c
@@ -169,13 +169,13 @@ add_library (qrencode SHARED
   qrcodelib.def
   )
 
-set_target_properties (qrencode
+set_target_properties (qrcodelib
   PROPERTIES
   COMPILE_FLAGS "-Wall -g"
   #LINK_FLAGS "-DPIC -version-number ${PROJECT_VERSION}"
 )
 
- target_link_libraries (qrencode
+ target_link_libraries (qrcodelib
       wingetopt.lib
  )
 
@@ -183,7 +183,7 @@ set_target_properties (qrencode
 ## Installation instructions
 
 install (
-  TARGETS qrencode
+  TARGETS qrcodelib
   RUNTIME DESTINATION bin
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
@@ -204,19 +204,19 @@ if (WITH_TOOLS)
     add_executable (qrencode_app qrenc.c)
     
     ## Linker instructions
-    target_link_libraries (qrencode_app
-      qrencode
+    target_link_libraries (qrencode
+      qrcodelib
       ${PNG_LIBRARIES}
       )
     
     ## Extra target properties
-    set_target_properties (qrencode_app
+    set_target_properties (qrencode
       PROPERTIES
-      OUTPUT_NAME qrencode_app)
+      OUTPUT_NAME qrencode)
     
     ## Installation instructions
     install (
-      TARGETS qrencode_app
+      TARGETS qrencode
       RUNTIME DESTINATION bin
       RENAME qrencode
       )
