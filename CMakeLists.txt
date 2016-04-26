@@ -201,7 +201,7 @@ if (WITH_TOOLS)
   if (PNG_LIBRARIES)
     
     ## Compiler instructions
-    add_executable (qrencode_app qrenc.c)
+    add_executable (qrencode qrenc.c)
     
     ## Linker instructions
     target_link_libraries (qrencode
