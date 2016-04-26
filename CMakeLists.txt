@@ -32,12 +32,10 @@ option (WITH_TOOLS "Build utility tools?"  YES )
 
 
 
-set (ZLIB_ROOT "C:/TRERDP_vc14/xw-3rdp")
-set (RDP_ROOT "C:/TRERDP_vc14/xw-3rdp")
-#set (PNG_LIBRARY "C:/TRERDP_vc14/xw-3rdp/lib/libpng16.lib")
-#set (PNG_PNG_INCLUDE_DIR, "C:/TRERDP_vc14/xw-3rdp/include/libpng16")
+set (TRERDP_ROOT "missing")
+set (ZLIB_ROOT "${TRERDP_ROOT}")
 include( cmake/FindPNG.cmake )
-link_directories("${RDP_ROOT}/lib")
+link_directories("${TRERDP_ROOT}/lib")
 
 ## ==============================================================================
 ##
