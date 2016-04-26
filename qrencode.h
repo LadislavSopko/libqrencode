@@ -552,6 +552,9 @@ extern void QRcode_APIVersion(int *major_version, int *minor_version, int *micro
  */
 extern char *QRcode_APIVersionString(void);
 
+
+
+
 #if defined(__cplusplus)
 }
 #endif
