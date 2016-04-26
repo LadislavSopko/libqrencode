@@ -32,7 +32,7 @@ option (WITH_TOOLS "Build utility tools?"  YES )
 
 
 
-set (TRERDP_ROOT "missing")
+set (TRERDP_ROOT "${CMAKE_INSTALL_PREFIX}")
 set (ZLIB_ROOT "${TRERDP_ROOT}")
 include( cmake/FindPNG.cmake )
 link_directories("${TRERDP_ROOT}/lib")
