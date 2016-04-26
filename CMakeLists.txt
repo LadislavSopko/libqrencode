@@ -37,6 +37,7 @@ set (RDP_ROOT "C:/TRERDP_vc14/xw-3rdp")
 #set (PNG_LIBRARY "C:/TRERDP_vc14/xw-3rdp/lib/libpng16.lib")
 #set (PNG_PNG_INCLUDE_DIR, "C:/TRERDP_vc14/xw-3rdp/include/libpng16")
 include( cmake/FindPNG.cmake )
+link_directories("${RDP_ROOT}/lib")
 
 ## ==============================================================================
 ##
@@ -171,8 +172,13 @@ add_library (qrencode SHARED
 set_target_properties (qrencode
   PROPERTIES
   COMPILE_FLAGS "-Wall -g"
-  LINK_FLAGS "-DPIC -version-number ${PROJECT_VERSION}"
+  #LINK_FLAGS "-DPIC -version-number ${PROJECT_VERSION}"
 )
+
+ target_link_libraries (qrencode
+      wingetopt.lib
+ )
+
 
 ## Installation instructions
 
@@ -206,7 +212,7 @@ if (WITH_TOOLS)
     ## Extra target properties
     set_target_properties (qrencode_app
       PROPERTIES
-      OUTPUT_NAME qrencode)
+      OUTPUT_NAME qrencode_app)
     
     ## Installation instructions
     install (
