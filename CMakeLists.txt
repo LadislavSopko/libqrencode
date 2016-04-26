@@ -233,14 +233,14 @@ endif (WITH_TOOLS)
 ##____________________________________________________________________
 ## Build test programs
 
-if (WITH_TESTS)
+#if (WITH_TESTS)
   
-  include (CTest)
-  enable_testing()
+  #include (CTest)
+  #enable_testing()
   
-  add_subdirectory (tests)
+  #add_subdirectory (tests)
   
-endif (WITH_TESTS)
+#endif (WITH_TESTS)
 
 ## ==============================================================================
 ##
