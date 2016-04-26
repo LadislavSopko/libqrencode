@@ -45,7 +45,7 @@ link_directories("${TRERDP_ROOT}/lib")
 
 ## Standard header files
 
-find_package (Doxygen)
+#find_package (Doxygen)
 #find_package (PNG)
 find_package (Threads)
 
