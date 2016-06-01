@@ -186,6 +186,11 @@ install (
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
   )
+  
+ install (	
+	FILES qrencode.h
+	DESTINATION include
+ )
 
 #EXTRA_DIST = libqrencode.pc.in autogen.sh configure.ac acinclude.m4 \
 #			 Makefile.am tests/Makefile.am qrencode.spec.in qrencode.spec \
