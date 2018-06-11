@@ -33,6 +33,10 @@
 
 #include "qrencode.h"
 
+#ifndef snprintf
+#define snprintf(buf,len, format,...) _snprintf_s(buf, len,len, format, __VA_ARGS__)
+#endif
+
 #define INCHES_PER_METER (100.0/2.54)
 
 static int casesensitive = 1;
